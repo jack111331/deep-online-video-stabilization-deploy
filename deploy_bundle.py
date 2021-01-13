@@ -248,8 +248,9 @@ for video_name in video_list:
     try:
         while(True):
             if (args.deploy_vis):
-                _, stable_cap_frame = stable_cap.read()
-                print(stable_cap_frame.shape)
+                is_cap, stable_cap_frame = stable_cap.read()
+                if is_cap == False:
+                    break;
                 stable_train_frame = cvt_img2train(stable_cap_frame, crop_rate)
                 if args.random_black is not None:
                     delta, speed = getNext(delta, 50, speed)
