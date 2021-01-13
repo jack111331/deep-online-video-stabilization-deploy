@@ -249,6 +249,7 @@ for video_name in video_list:
         while(True):
             if (args.deploy_vis):
                 _, stable_cap_frame = stable_cap.read()
+                print(stable_cap_frame.shape)
                 stable_train_frame = cvt_img2train(stable_cap_frame, crop_rate)
                 if args.random_black is not None:
                     delta, speed = getNext(delta, 50, speed)
