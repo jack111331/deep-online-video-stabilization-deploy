@@ -187,6 +187,7 @@ for video_name in video_list:
     print(video_name)
     stable_cap = cv2.VideoCapture(os.path.join(args.prefix,'stable', video_name)) 
     unstable_cap = cv2.VideoCapture(os.path.join(args.prefix,'unstable', video_name))
+    print(os.path.join(args.prefix,'unstable', video_name), os.path.join(args.prefix,'stable', video_name))
     fps = unstable_cap.get(cv2.CAP_PROP_FPS)
     cut_fps = False
     if (fps > 40):
